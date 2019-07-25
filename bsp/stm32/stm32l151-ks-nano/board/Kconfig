@@ -1,0 +1,55 @@
+menu "Hardware Drivers Config"
+
+config SOC_STM32L151RCT6
+    bool
+    select SOC_SERIES_STM32L1
+    default y
+
+menu "Onboard Peripheral Drivers"
+
+    config BSP_USING_USB_TO_USART
+        bool "Enable USB TO USART (uart1)"
+        select BSP_USING_UART
+        select BSP_USING_UART1
+        default y
+
+    config BSP_USING_EEPROM
+        bool "Enable I2C EEPROM (i2c1)"
+        select BSP_USING_I2C1
+        default n
+
+    config BSP_USING_SPI_FLASH
+        bool "Enable SPI FLASH (W25Q16 spi2)"
+	select BSP_USING_SPI
+        select BSP_USING_SPI2
+        select RT_USING_SFUD
+        select RT_SFUD_USING_SFDP
+        default n
+
+    config BSP_USING_POT
+        bool "Enable potentiometer"
+        select BSP_USING_ADC
+        select BSP_USING_ADC1
+        default n 
+
+endmenu
+
+menu "On-chip Peripheral Drivers"
+
+    config BSP_USING_GPIO
+        bool "Enable GPIO"
+        select RT_USING_PIN
+        default y
+
+    config BSP_USING_UART1
+        bool "Enable UART1"
+        select RT_USING_SERIAL
+		default y
+
+endmenu
+
+menu "Board extended module Drivers"
+
+endmenu
+
+endmenu
