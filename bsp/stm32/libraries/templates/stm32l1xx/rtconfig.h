@@ -11,7 +11,13 @@
 #define RT_THREAD_PRIORITY_32
 #define RT_THREAD_PRIORITY_MAX 32
 #define RT_TICK_PER_SECOND 1000
+#define RT_USING_OVERFLOW_CHECK
+#define RT_USING_HOOK
+#define RT_USING_IDLE_HOOK
+#define RT_IDEL_HOOK_LIST_SIZE 4
 #define IDLE_THREAD_STACK_SIZE 256
+#define RT_DEBUG
+#define RT_DEBUG_COLOR
 
 /* Inter-Thread communication */
 
@@ -23,13 +29,17 @@
 
 /* Memory Management */
 
+#define RT_USING_MEMPOOL
 #define RT_USING_SMALL_MEM
 #define RT_USING_HEAP
 
 /* Kernel Device Object */
 
 #define RT_USING_DEVICE
-#define RT_VER_NUM 0x40001
+#define RT_USING_CONSOLE
+#define RT_CONSOLEBUF_SIZE 128
+#define RT_CONSOLE_DEVICE_NAME "uart1"
+#define RT_VER_NUM 0x40000
 #define ARCH_ARM
 #define ARCH_ARM_CORTEX_M
 #define ARCH_ARM_CORTEX_M3
@@ -46,6 +56,19 @@
 
 /* Command shell */
 
+#define RT_USING_FINSH
+#define FINSH_THREAD_NAME "tshell"
+#define FINSH_USING_HISTORY
+#define FINSH_HISTORY_LINES 5
+#define FINSH_USING_SYMTAB
+#define FINSH_USING_DESCRIPTION
+#define FINSH_THREAD_PRIORITY 20
+#define FINSH_THREAD_STACK_SIZE 4096
+#define FINSH_CMD_SIZE 80
+#define FINSH_USING_MSH
+#define FINSH_USING_MSH_DEFAULT
+#define FINSH_USING_MSH_ONLY
+#define FINSH_ARG_MAX 10
 
 /* Device virtual file system */
 
@@ -56,7 +79,6 @@
 #define RT_PIPE_BUFSZ 512
 #define RT_USING_SERIAL
 #define RT_SERIAL_USING_DMA
-#define RT_SERIAL_RB_BUFSZ 64
 #define RT_USING_PIN
 
 /* Using WiFi */
@@ -73,9 +95,6 @@
 /* Socket abstraction layer */
 
 
-/* Network interface device */
-
-
 /* light weight TCP/IP stack */
 
 
@@ -89,6 +108,9 @@
 
 
 /* Utilities */
+
+
+/* ARM CMSIS */
 
 
 /* RT-Thread online packages */
@@ -131,18 +153,18 @@
 /* samples: kernel and components samples */
 
 #define SOC_FAMILY_STM32
-#define SOC_SERIES_STM32L1
+#define SOC_SERIES_STM32F1
 
 /* Hardware Drivers Config */
 
-#define SOC_STM32L151RCT6
+#define SOC_STM32F103RB
 
 /* Onboard Peripheral Drivers */
-
 
 /* On-chip Peripheral Drivers */
 
 #define BSP_USING_GPIO
+#define BSP_USING_UART
 #define BSP_USING_UART1
 
 /* Board extended module Drivers */
