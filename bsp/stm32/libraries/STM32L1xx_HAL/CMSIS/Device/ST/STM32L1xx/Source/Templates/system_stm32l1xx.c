@@ -166,6 +166,19 @@ void SystemInit (void)
 #else
   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH. */
 #endif
+
+//  RCC->AHBENR =  RCC->AHBENR | RCC_AHBENR_GPIOCEN;
+//	GPIOC->MODER = GPIO_MODER_MODER3_0;
+//	GPIOC->BSRR = GPIO_BSRR_BR_3;
+	
+  //GPIO_MODER_MODER3_Msk
+	//GPIOC->MODER = GPIO_MODER_MODER3_0;
+	// pull up pull down?
+	//GPIOC->PUPDR = 0;
+	// open-drain push-pull
+	//GPIOC->OTYPER = GPIO_OTYPER_OT_3;
+	//GPIOC->BSRR = GPIO_BSRR_BS_3;
+	//GPIOC->BSRR = GPIO_BSRR_BR_3;
 }
 
 /**

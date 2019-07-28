@@ -111,8 +111,13 @@ void rt_hw_us_delay(rt_uint32_t us)
 /**
  * This function will initial STM32 board.
  */
-RT_WEAK void rt_hw_board_init()
+//RT_WEAK void rt_hw_board_init()
+void rt_hw_board_init()
 {
+//	RCC->AHBENR =  RCC->AHBENR | RCC_AHBENR_GPIOCEN;
+//	GPIOC->MODER = GPIO_MODER_MODER3_0;
+//	GPIOC->BSRR = GPIO_BSRR_BR_3;
+//	rt_hw_us_delay(500000);
 #ifdef SCB_EnableICache
     /* Enable I-Cache---------------------------------------------------------*/
     SCB_EnableICache();
@@ -159,5 +164,6 @@ RT_WEAK void rt_hw_board_init()
 #ifdef RT_USING_COMPONENTS_INIT
     rt_components_board_init();
 #endif
+
 }
 

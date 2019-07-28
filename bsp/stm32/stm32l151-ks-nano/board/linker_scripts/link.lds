@@ -1,12 +1,12 @@
 /*
- * linker script for STM32F10x with GNU ld
+ * linker script for STM32L1xx with GNU ld
  */
 
 /* Program Entry, set to mark it as "used" and avoid gc */
 MEMORY
 {
-    ROM (rx) : ORIGIN = 0x08000000, LENGTH = 256k /* 128KB flash */
-    RAM (rw) : ORIGIN = 0x20000000, LENGTH =  32k /* 20K sram */
+    ROM (rx) : ORIGIN = 0x08000000, LENGTH = 256k /* 256KB flash */
+    RAM (rw) : ORIGIN = 0x20000000, LENGTH =  32k /* 32K sram */
 }
 ENTRY(Reset_Handler)
 _system_stack_size = 0x200;
