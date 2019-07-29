@@ -23,6 +23,8 @@
 
 /* Memory Management */
 
+#define RT_USING_MEMPOOL
+#define RT_USING_MEMHEAP
 #define RT_USING_SMALL_MEM
 #define RT_USING_HEAP
 
@@ -99,18 +101,58 @@
 /* Socket abstraction layer */
 
 #define RT_USING_SAL
+
+/* protocol stack implement */
+
+#define SAL_USING_LWIP
+#define SAL_USING_TLS
 #define SAL_USING_POSIX
 
 /* Network interface device */
 
 #define RT_USING_NETDEV
-#define NETDEV_USING_IFCONFIG
 #define NETDEV_USING_PING
-#define NETDEV_USING_NETSTAT
-#define NETDEV_USING_AUTO_DEFAULT
 
 /* light weight TCP/IP stack */
 
+#define RT_USING_LWIP
+#define RT_USING_LWIP210
+#define RT_LWIP_ICMP
+#define RT_LWIP_DNS
+
+/*  */
+//#define RT_USING_LWIP_IPV6
+
+/* Static IPv4 Address */
+
+#define RT_LWIP_IPADDR "192.168.1.30"
+#define RT_LWIP_GWADDR "192.168.1.1"
+#define RT_LWIP_MSKADDR "255.255.255.0"
+#define RT_LWIP_UDP
+#define RT_LWIP_TCP
+#define RT_LWIP_RAW
+#define RT_MEMP_NUM_NETCONN 8
+#define RT_LWIP_PBUF_NUM 16
+#define RT_LWIP_RAW_PCB_NUM 4
+#define RT_LWIP_UDP_PCB_NUM 4
+#define RT_LWIP_TCP_PCB_NUM 4
+#define RT_LWIP_TCP_SEG_NUM 40
+#define RT_LWIP_TCP_SND_BUF 8196
+#define RT_LWIP_TCP_WND 8196
+#define RT_LWIP_TCPTHREAD_PRIORITY 10
+#define RT_LWIP_TCPTHREAD_MBOX_SIZE 8
+#define RT_LWIP_TCPTHREAD_STACKSIZE 1024
+#define RT_LWIP_ETHTHREAD_PRIORITY 12
+#define RT_LWIP_ETHTHREAD_STACKSIZE 1024
+#define RT_LWIP_ETHTHREAD_MBOX_SIZE 8
+#define LWIP_NETIF_STATUS_CALLBACK 1
+#define LWIP_NETIF_LINK_CALLBACK 1
+#define SO_REUSE 1
+#define LWIP_SO_RCVTIMEO 1
+#define LWIP_SO_SNDTIMEO 1
+#define LWIP_SO_RCVBUF 1
+#define LWIP_NETIF_LOOPBACK 0
+#define RT_LWIP_USING_PING
 
 /* Modbus master and slave stack */
 
@@ -136,6 +178,9 @@
 
 /* Wiced WiFi */
 
+#define PKG_USING_COAP
+#define PKG_USING_COAP_EXAMPLE
+#define PKG_USING_COAP_LATEST_VERSION
 
 /* IoT Cloud */
 
