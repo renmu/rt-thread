@@ -9,7 +9,7 @@
  */
 
 #include <rtthread.h>
-#include <rtdevice.h>
+#include <rtthread.h>
 #include <board.h>
 
 /* defined the LED0 pin: PC3 */
@@ -31,6 +31,7 @@ int main(void)
         rt_pin_write(LED0_PIN, PIN_LOW);
 				//GPIOC->BSRR = GPIO_BSRR_BR_3;
         rt_thread_mdelay(500);
+			  //rt_kprintf("hello\n");
     }
 
     return RT_EOK;

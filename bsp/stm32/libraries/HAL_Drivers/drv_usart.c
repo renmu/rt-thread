@@ -687,4 +687,23 @@ int rt_hw_usart_init(void)
     return result;
 }
 
+void bsp_uart_send(char c) 
+{ 
+    while ((__HAL_UART_GET_FLAG(&uart_config[UART1_INDEX], UART_FLAG_TXE) == RESET)); 
+    uart_config[UART1_INDEX].Instance->DR = c; 
+}
+
+void rt_hw_console_output(const char *str)
+{
+    RT_ASSERT(str != RT_NULL); 
+    while (*str != '\0') 
+    { 
+        if (*str == '\n') 
+        { 
+            bsp_uart_send('\r'); 
+        } 
+        bsp_uart_send(*str++); 
+    } 
+}
+
 #endif /* RT_USING_SERIAL */
