@@ -13,6 +13,8 @@ if os.getenv('RTT_CC'):
 if os.getenv('RTT_ROOT'):
     RTT_ROOT = os.getenv('RTT_ROOT')
 
+#CROSS_TOOL='keil'
+print(CROSS_TOOL)
 # cross_tool provides the cross compiler
 # EXEC_PATH is the compiler execute path, for example, CodeSourcery, Keil MDK, IAR
 if  CROSS_TOOL == 'gcc':
