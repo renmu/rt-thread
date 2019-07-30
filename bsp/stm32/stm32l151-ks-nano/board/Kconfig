@@ -41,10 +41,29 @@ menu "On-chip Peripheral Drivers"
         select RT_USING_PIN
         default y
 
-    config BSP_USING_UART1
-        bool "Enable UART1"
+    menuconfig BSP_USING_UART
+        bool "Enable UART"
+        default y
         select RT_USING_SERIAL
-		default y
+        if BSP_USING_UART
+            config BSP_USING_UART1
+                bool "Enable UART1"
+                default y
+
+            config BSP_UART1_RX_USING_DMA
+                bool "Enable UART1 RX DMA"
+                depends on BSP_USING_UART1 && RT_SERIAL_USING_DMA
+                default n
+
+            config BSP_USING_UART2
+                bool "Enable UART2"
+                default n
+
+            config BSP_UART2_RX_USING_DMA
+                bool "Enable UART2 RX DMA"
+                depends on BSP_USING_UART2 && RT_SERIAL_USING_DMA
+                default n
+        endif    
 
 endmenu
 

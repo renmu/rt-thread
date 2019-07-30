@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=F:/IOT/code/rt-thread/bsp/stm32/stm32l151-ks-nano/board/CubeMX_Config/STM32L151RCT6/Inc
+HeaderPath=F:/IOT/code/rt-thread/bsp/stm32/stm32l151-ks-nano/board/CubeMX_Config/Inc
 HeaderFiles=stm32l1xx_it.h;stm32l1xx_hal_conf.h;main.h;
-SourcePath=F:/IOT/code/rt-thread/bsp/stm32/stm32l151-ks-nano/board/CubeMX_Config/STM32L151RCT6/Src
+SourcePath=F:/IOT/code/rt-thread/bsp/stm32/stm32l151-ks-nano/board/CubeMX_Config/Src
 SourceFiles=stm32l1xx_it.c;stm32l1xx_hal_msp.c;main.c;
 
 [PreviousLibFiles]
