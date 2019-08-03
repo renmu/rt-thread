@@ -781,9 +781,11 @@ static void client_parser(at_client_t client)
 static rt_err_t at_client_rx_ind(rt_device_t dev, rt_size_t size)
 {
     int idx = 0;
-
+	
+    //LOG_E("rx dev(%d) (%d)\n", dev, size);
     for (idx = 0; idx < AT_CLIENT_NUM_MAX; idx++)
     {
+		//LOG_E("at_client_table dev(%d) ,rx dev(%d) (%d)\n", at_client_table[idx].device, dev, size);
         if (at_client_table[idx].device == dev && size > 0)
         {
             rt_sem_release(at_client_table[idx].rx_notice);
