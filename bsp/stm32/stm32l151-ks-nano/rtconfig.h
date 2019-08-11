@@ -23,7 +23,6 @@
 #define RT_USING_SEMAPHORE
 #define RT_USING_MUTEX
 #define RT_USING_EVENT
-#define RT_USING_MAILBOX
 #define RT_USING_MESSAGEQUEUE
 
 /* Memory Management */
@@ -70,6 +69,11 @@
 
 /* Device virtual file system */
 
+#define RT_USING_DFS
+#define DFS_FILESYSTEMS_MAX 2
+#define DFS_FILESYSTEM_TYPES_MAX 2
+#define DFS_FD_MAX 16
+#define RT_USING_DFS_DEVFS
 
 /* Device Drivers */
 
@@ -88,6 +92,7 @@
 /* POSIX layer and C standard library */
 
 #define RT_USING_LIBC
+#define RT_USING_POSIX
 
 /* Network */
 
@@ -98,15 +103,11 @@
 /* protocol stack implement */
 
 #define SAL_USING_AT
-#define SAL_SOCKETS_NUM 16
+#define SAL_USING_POSIX
 
 /* Network interface device */
 
 #define RT_USING_NETDEV
-#define NETDEV_USING_IFCONFIG
-#define NETDEV_USING_PING
-#define NETDEV_USING_NETSTAT
-#define NETDEV_USING_AUTO_DEFAULT
 #define NETDEV_IPV4 1
 #define NETDEV_IPV6 0
 
@@ -116,14 +117,14 @@
 /* AT commands */
 
 #define RT_USING_AT
+#define AT_DEBUG
 #define AT_USING_CLIENT
 #define AT_CLIENT_NUM_MAX 1
 #define AT_USING_SOCKET
 #define AT_USING_CLI
+#define AT_PRINT_RAW_CMD
 #define AT_CMD_MAX_LEN 128
 #define AT_SW_VERSION_NUM 0x10300
-//#define AT_DEVICE_USING_M26
-//#define AT_DEVICE_M26_SAMPLE
 
 /* VBUS(Virtual Software BUS) */
 
@@ -144,13 +145,14 @@
 /* Wiced WiFi */
 
 #define PKG_USING_AT_DEVICE
-#define PKG_AT_INIT_BY_THREAD
-#define AT_DEVICE_M26
-#define AT_DEVICE_SOCKETS_NUM 6
+#define AT_DEVICE_BC28
+#define AT_DEVICE_SOCKETS_NUM 0
 #define AT_DEVICE_NAME "uart2"
 #define AT_DEVICE_RECV_BUFF_LEN 512
 #define PKG_USING_AT_DEVICE_LATEST_VERSION
 #define PKG_AT_DEVICE_VER_NUM 0x99999
+#define AT_DEVICE_USING_BC28
+#define AT_DEVICE_BC28_SAMPLE
 
 /* IoT Cloud */
 
@@ -178,6 +180,9 @@
 
 /* samples: kernel and components samples */
 
+#define PKG_USING_NETWORK_SAMPLES
+#define PKG_USING_NETWORK_SAMPLES_V030
+#define NETWORK_SAMPLES_USING_UDP_CLIENT
 #define SOC_FAMILY_STM32
 #define SOC_SERIES_STM32L1
 
@@ -187,7 +192,6 @@
 
 /* Onboard Peripheral Drivers */
 
-#define BSP_USING_USB_TO_USART
 
 /* On-chip Peripheral Drivers */
 
