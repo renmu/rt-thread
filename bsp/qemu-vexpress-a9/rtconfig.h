@@ -17,12 +17,16 @@
 #define RT_USING_HOOK
 #define RT_USING_IDLE_HOOK
 #define RT_IDEL_HOOK_LIST_SIZE 4
-#define IDLE_THREAD_STACK_SIZE 1024
+#define IDLE_THREAD_STACK_SIZE 2048
 #define RT_USING_TIMER_SOFT
 #define RT_TIMER_THREAD_PRIO 4
 #define RT_TIMER_THREAD_STACK_SIZE 1024
 #define RT_DEBUG
 #define RT_DEBUG_COLOR
+#define RT_DEBUG_INIT_CONFIG
+#define RT_DEBUG_INIT 1
+#define RT_DEBUG_MODULE_CONFIG
+#define RT_DEBUG_MODULE 1
 
 /* Inter-Thread communication */
 
@@ -74,7 +78,7 @@
 #define FINSH_USING_SYMTAB
 #define FINSH_USING_DESCRIPTION
 #define FINSH_THREAD_PRIORITY 20
-#define FINSH_THREAD_STACK_SIZE 4096
+#define FINSH_THREAD_STACK_SIZE 8192
 #define FINSH_CMD_SIZE 80
 #define FINSH_USING_MSH
 #define FINSH_USING_MSH_DEFAULT
@@ -134,12 +138,6 @@
 #define RT_SFUD_USING_FLASH_INFO_TABLE
 #define RT_USING_WDT
 
-/* Using Hardware Crypto drivers */
-
-
-/* Using WiFi */
-
-
 /* Using USB */
 
 
@@ -162,6 +160,7 @@
 /* protocol stack implement */
 
 #define SAL_USING_LWIP
+#define SAL_USING_TLS
 #define SAL_USING_POSIX
 
 /* Network interface device */
@@ -216,9 +215,6 @@
 #define LWIP_NETIF_LOOPBACK 0
 #define RT_LWIP_USING_PING
 
-/* Modbus master and slave stack */
-
-
 /* AT commands */
 
 
@@ -226,6 +222,7 @@
 
 
 /* Utilities */
+
 #define RT_USING_LWP
 
 /* RT-Thread online packages */
@@ -240,12 +237,26 @@
 
 /* Wiced WiFi */
 
+#define PKG_USING_COAP
+#define PKG_USING_COAP_EXAMPLE
+#define PKG_USING_COAP_LATEST_VERSION
 
 /* IoT Cloud */
 
 
 /* security packages */
 
+#define PKG_USING_MBEDTLS
+
+/* Select Root Certificate */
+
+#define PKG_USING_MBEDTLS_DIGICERT_ROOT_CA
+#define MBEDTLS_AES_ROM_TABLES
+#define MBEDTLS_ECP_WINDOW_SIZE 2
+#define MBEDTLS_SSL_MAX_CONTENT_LEN 512
+#define PKG_USING_MBEDTLS_EXAMPLE
+#define PKG_USING_MBEDTLS_DEBUG
+#define PKG_USING_MBEDTLS_V260
 
 /* language packages */
 
@@ -267,6 +278,9 @@
 
 /* samples: kernel and components samples */
 
+#define PKG_USING_NETWORK_SAMPLES
+#define PKG_USING_NETWORK_SAMPLES_V030
+#define NETWORK_SAMPLES_USING_UDP_CLIENT
 #define SOC_VEXPRESS_A9
 #define RT_USING_UART0
 #define RT_USING_UART1
